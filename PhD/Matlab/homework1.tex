@@ -1,0 +1,77 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+
+\begin{document}
+
+
+\title{Домашна работа 1}
+\author{Томче Делев}
+\date{}
+
+\maketitle
+
+\section{Задача}
+\begin{verbatim}
+x = 0:.1:.5;
+m = [x; 4 * sin(3 * x); 3 * sin(4 * x)];
+
+m = m';
+disp('1. Zadaca');
+disp(m);
+\end{verbatim}
+
+\section{Задача}
+\begin{verbatim}
+x = 0:.05:6;
+y = sin(x * pi);
+yy = (y <= 0) .* y;
+clf;
+plot(x, y, ':', x, yy, '-');
+grid on;
+\end{verbatim}
+
+\section{Задача}
+\begin{verbatim}
+x = -2 : .1 : 2;
+y = -2 : .1 : 2;
+
+[x, y] = meshgrid(x, y);
+f = x .* exp(-((x - y .^ 2) .^ 2 + y .^ 2));
+surfc(x, y, f);
+xlabel('x');
+ylabel('y');
+zlabel('f(x, y)');
+\end{verbatim}
+
+\section{Задача}
+\begin{verbatim}
+function [m] = weightedMean(x, w)
+
+% Computes weighted arithmetic mean of vector X, and weight vector W
+
+if length(x) ~= length(w)
+    disp('Vector X and vector W have different sizes.');
+    return
+end
+
+if length(find(w < 0)) > 0
+    disp('Weight vector contains negative values.');
+    return
+end
+
+s = sum(w);
+if s == 0
+    disp('Sum of weights is 0.');
+    return
+end
+
+m = sum(w .* x) / s;
+\end{verbatim}
+
+
+\end{document}

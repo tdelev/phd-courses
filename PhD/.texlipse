@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Tue Jun 05 21:13:57 CEST 2012
+builderNum=2
+outputDir=out
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=seminarska.tex
+outputFile=seminarska.pdf
+langSpell=en
+markDer=true
+srcDir=Matlab
