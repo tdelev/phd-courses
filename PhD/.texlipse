@@ -1,13 +1,13 @@
 #TeXlipse project settings
-#Tue Jun 05 21:13:57 CEST 2012
+#Sun Jul 22 21:10:15 CEST 2012
 builderNum=2
 outputDir=out
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=tmp
-mainTexFile=seminarska.tex
-outputFile=seminarska.pdf
+mainTexFile=e-lab_article.tex
+outputFile=e-lab_article.pdf
 langSpell=en
 markDer=true
-srcDir=Matlab
+srcDir=Papers

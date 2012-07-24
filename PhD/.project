@@ -20,5 +20,10 @@
 			<type>1</type>
 			<location>/usr/share/texmf-texlive/tex/latex/tools/.tex</location>
 		</link>
+		<link>
+			<name>Papers/IEEEabrv.bib</name>
+			<type>1</type>
+			<location>/usr/share/texmf-texlive/bibtex/bib/IEEEtran/IEEEabrv.bib</location>
+		</link>
 	</linkedResources>
 </projectDescription>
