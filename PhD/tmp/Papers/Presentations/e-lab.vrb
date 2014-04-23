@@ -1,0 +1,22 @@
+\frametitle {The solution}\begin {itemize}
+     \item Algorithmic type of problems
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}[node distance = 3cm, auto]
+    % Place nodes
+    \pause
+    \node [block] (input) {Input};
+    \pause
+    \path [line] (input) -> node {} (algorithm);
+    \node [block, right of=input] (algorithm) {Algorithm}
+    \pause
+    \path [line] (algorithm) -> node {} (output);
+    \node [block, right of=algorithm] (output) {Output};
+    % Draw edges
+\end{tikzpicture}
+\end{center}
+\pause
+\begin{itemize}[<+->]
+  \item Used in competitive programming systems
+  \item Importance in programming to have working solution
+\end{itemize}

@@ -1,0 +1,23 @@
+\frametitle {Основата на Code}\begin {itemize}
+      \item Алгоритамски видови на задачи
+    \end{itemize}
+\begin{center}
+\begin{tikzpicture}[node distance = 3cm, auto]
+    % Place nodes
+    \pause
+    \node [block] (input) {Влез};
+    \pause
+    \path [line] (input) -> node {} (algorithm);
+    \node [block, right of=input] (algorithm) {Алгоритам}
+    \pause
+    \path [line] (algorithm) -> node {} (output);
+    \node [block, right of=algorithm] (output) {Излез};
+    % Draw edges
+\end{tikzpicture}
+\end{center}
+\pause
+\begin{itemize}[<+->]
+  \item Се користи во системи за натпревари во програмирање
+  \item Ја потенцираат важноста во програмирањето да се има решение
+  кое работи точно
+\end{itemize}

@@ -1,4 +1,4 @@
-function [h, display_array] = displayData(X, example_width)
+function [h, display_array] = displayData(X, cur, example_width)
 %DISPLAYDATA Display 2D data in a nice grid
 %   [h, display_array] = DISPLAYDATA(X, example_width) displays 2D data
 %   stored in X in a nice grid. It returns the figure handle h and the 
@@ -8,6 +8,10 @@ function [h, display_array] = displayData(X, example_width)
 if ~exist('example_width', 'var') || isempty(example_width) 
 	example_width = round(sqrt(size(X, 2)));
 end
+
+%if ~exist('cur', 'var') || isempty(cur) 
+%	cur = 0;
+%end
 
 % Gray Image
 colormap(gray);
@@ -48,8 +52,12 @@ for j = 1:display_rows
 	end
 end
 
+
 % Display Image
 h = imagesc(display_array, [-1 1]);
+%fname = strcat("number_", int2str(cur), ".png")
+%print(fname, '-dpng');
+
 
 % Do not show axis
 axis image off

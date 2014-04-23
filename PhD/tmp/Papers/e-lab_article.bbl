@@ -1,0 +1,54 @@
+\begin{thebibliography}{10}
+
+\bibitem{winslow1996programming}
+L.~Winslow, ``Programming pedagogy-a psychological overview,'' {\em ACM SIGCSE
+  Bulletin}, vol.~28, no.~3, pp.~17--22, 1996.
+
+\bibitem{jenkins2001teaching}
+T.~Jenkins, ``Teaching programming--a journey from teacher to motivator,''
+  2001.
+
+\bibitem{douce2005automatic}
+C.~Douce, D.~Livingstone, and J.~Orwell, ``Automatic test-based assessment of
+  programming: A review,'' {\em Journal on Educational Resources in Computing
+  (JERIC)}, vol.~5, no.~3, p.~4, 2005.
+
+\bibitem{joy2005boss}
+M.~Joy, N.~Griffiths, and R.~Boyatt, ``The boss online submission and
+  assessment system,'' {\em Journal on Educational Resources in Computing
+  (JERIC)}, vol.~5, no.~3, p.~2, 2005.
+
+\bibitem{saikkonen2001fully}
+R.~Saikkonen, L.~Malmi, and A.~Korhonen, ``Fully automatic assessment of
+  programming exercises,'' in {\em ACM SIGCSE Bulletin}, vol.~33, pp.~133--136,
+  ACM, 2001.
+
+\bibitem{higgins2003coursemarker}
+C.~Higgins, T.~Hegazy, P.~Symeonidis, and A.~Tsintsifas, ``The coursemarker cba
+  system: Improvements over ceilidh,'' {\em Education and Information
+  Technologies}, vol.~8, no.~3, pp.~287--304, 2003.
+
+\bibitem{daly2004automated}
+C.~Daly and J.~Horgan, ``An automated learning system for java programming,''
+  {\em Education, IEEE Transactions on}, vol.~47, no.~1, pp.~10--17, 2004.
+
+\bibitem{vihavainen2011extreme}
+A.~Vihavainen, M.~Paksula, and M.~Luukkainen, ``Extreme apprenticeship method
+  in teaching programming for beginners,'' in {\em Proceedings of the 42nd ACM
+  technical symposium on Computer science education}, pp.~93--98, ACM, 2011.
+
+\bibitem{baker1995finding}
+B.~Baker, ``On finding duplication and near-duplication in large software
+  systems,'' in {\em Reverse Engineering, 1995., Proceedings of 2nd Working
+  Conference on}, pp.~86--95, IEEE, 1995.
+
+\bibitem{clough2000plagiarism}
+P.~Clough, ``Plagiarism in natural and programming languages: an overview of
+  current tools and technologies,''
+
+\bibitem{aiken2005moss}
+A.~Aiken {\em et~al.}, ``Moss: A system for detecting software plagiarism,''
+  {\em University of California--Berkeley. See www. cs. berkeley.
+  edu/aiken/moss. html}, 2005.
+
+\end{thebibliography}

@@ -1,0 +1,54 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{aiken2005moss}
+Aiken, A., et~al.: Moss: A system for detecting software plagiarism. University
+  of California--Berkeley. See www. cs. berkeley. edu/aiken/moss. html  (2005)
+
+\bibitem{baker1995finding}
+Baker, B.: On finding duplication and near-duplication in large software
+  systems. In: Reverse Engineering, 1995., Proceedings of 2nd Working
+  Conference on. pp. 86--95. IEEE (1995)
+
+\bibitem{clough2000plagiarism}
+Clough, P.: Plagiarism in natural and programming languages: an overview of
+  current tools and technologies
+
+\bibitem{daly2004automated}
+Daly, C., Horgan, J.: An automated learning system for java programming.
+  Education, IEEE Transactions on  47(1),  10--17 (2004)
+
+\bibitem{douce2005automatic}
+Douce, C., Livingstone, D., Orwell, J.: Automatic test-based assessment of
+  programming: A review. Journal on Educational Resources in Computing (JERIC)
+  5(3), ~4 (2005)
+
+\bibitem{higgins2003coursemarker}
+Higgins, C., Hegazy, T., Symeonidis, P., Tsintsifas, A.: The coursemarker cba
+  system: Improvements over ceilidh. Education and Information Technologies
+  8(3),  287--304 (2003)
+
+\bibitem{jenkins2001teaching}
+Jenkins, T.: Teaching programming--a journey from teacher to motivator (2001)
+
+\bibitem{joy2005boss}
+Joy, M., Griffiths, N., Boyatt, R.: The boss online submission and assessment
+  system. Journal on Educational Resources in Computing (JERIC)  5(3), ~2
+  (2005)
+
+\bibitem{saikkonen2001fully}
+Saikkonen, R., Malmi, L., Korhonen, A.: Fully automatic assessment of
+  programming exercises. In: ACM SIGCSE Bulletin. vol.~33, pp. 133--136. ACM
+  (2001)
+
+\bibitem{vihavainen2011extreme}
+Vihavainen, A., Paksula, M., Luukkainen, M.: Extreme apprenticeship method in
+  teaching programming for beginners. In: Proceedings of the 42nd ACM technical
+  symposium on Computer science education. pp. 93--98. ACM (2011)
+
+\bibitem{winslow1996programming}
+Winslow, L.: Programming pedagogy-a psychological overview. ACM SIGCSE Bulletin
+   28(3),  17--22 (1996)
+
+\end{thebibliography}

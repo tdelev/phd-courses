@@ -1,0 +1,407 @@
+\documentclass{llncs}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[numbers,sort]{natbib}
+\usepackage{url}
+\usepackage{multirow}
+\renewcommand\bibname{References}
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+%
+\begin{document}
+
+\title{A study on implementation and usage of web based programming assesment
+system: Code}
+
+\author{Tomche Delev\inst{1} \and Dejan Gjorgjevikj\inst{1}}
+
+\institute{Faculty of Computer Science and Engineering
+\email{\{tomche.delev,dejan.gjorgjevikj\}@finki.ukim.mk}}
+
+
+\maketitle
+
+
+\begin{abstract}
+\emph{E-Lab} is a system developed at Faculty of Computer Science and
+Engineering for solving and auto-grading programming problems from introduction
+to programming courses. The main goal is to simplify and improve the
+organization and the process of solving programming problems from large group of
+students in dedicated computer labs using centralized server. All the work from
+the students is done in a web browser using a web-based code editor and
+everything is stored, compiled and executed on the server. The system 
+keeps records of all problem attempts from identified students which are used as
+attendance records. All the problems and solutions are under version control
+system (Git). The platform supports different types of problems in several
+programming languages (C, C++, Java) and it's designed to be easily extended.
+
+\keywords{Online submission, programming languages, automated assessment}
+\end{abstract}
+
+\section{Introduction}
+
+In last three years, the trend of new enrolled students in CS is showing
+constant increase. This trand directly effects the large number of students in
+introductionary programming courses. The data at the Faculty of Computer Science
+and Engineering (FCSE) shows that in 2012 and 2013 the number of enrolled
+students in the introductionary programming course Structured Programming were 900 and
+1029 respectivly.
+
+One step in better maneging the learning process of large groups of students
+was development and implementation of web based system for automatic assessment of programming
+problems then called E-Lab \cite{delev2012lab} and now renamed to Code. The
+initial idea of the system was to help tutors and instructors in identified
+difficulties they have trying to assess all of the students' solutions.
+Later on the system was also used in practical exams in courses that involve
+programming assignments. The timed and informative feedback to students and
+automatic assessment is top priority of the system.
+
+Application of automatic assessment in programming assignments is suggested long
+time ago \cite{hollingsworth1960automatic}. In the context of very large group
+of students and the new MOOCs it may be the only solution to provide effective
+feedback and grading. Speed, availability, consistency and objectivty of
+assessment are some advantages mentioned in \cite{ala2005survey}, and
+\cite{vujovsevic2013software} are showing that automatically generated grades
+are highly correlated with instructor-assigned grades.
+
+In this paper we present the experience and initial results from
+implementing the system Code in two programming coureses taught at FCSE. We
+study the data generaged by the usage of the system, and try to identify
+patterns of usage that can reveal some potential new features, but also problems
+with our system. We investigate the results from plagiarism detection system and
+show results from qualitative evaluation on the system from representative group
+of end users.
+
+\section{Related Work}
+
+The work on automatic assessment can be broadly categorized in research on
+systems and tools and research on new methods and difficulties of novice
+programmers. Examples of recent systems are eGrader \cite{shamsi2012intelligent}
+graph-based grading system for Java introductionary programming courses,
+CAT-SOOP \cite{hartz2012cat} a tool for automatic collection and assessment of
+homework exercises and WeScheme \cite{yoo2011wescheme} that is a system
+similar to Code \cite{delev2012lab} in using the web browser as coding
+environment. In their work \cite{ihantola2010review} review most of the recent system.
+They discuss the major features of these systems such the ways of defining test
+by teachers, resubmission policies, security issues and concluded that too many
+systems are devolped, mainly because most of the systems are closed and
+collaboration is missing.
+
+There are also studies on different aproaches and learning methods that can be
+helpful in designing, implementing or improvment of automatic assessment
+systems. One such study is on the difficulties of novice programmers
+\cite{lahtinen2005study}, where by surveying more than 500 students and
+teachers, autors provide information of the dificulties experienced and
+percieved when learning or teaching programming. One interesting conclusion they present is
+that students overestimate their understanding, while the teachers think that
+the course contents are more difficult for the students than the students
+themselves. Students usually get the right perception lately during the exam
+sessions.
+
+Other interesting subject in research are studies on student programming bugs
+and most occured syntax errors. A one year empirical
+study of student programming bugs is done in \cite{bryce2010one}, where authors
+conclude that approximately 22\% of the problems are due to problem solving
+skills, while the remaining problems involve a combination of logic and syntax
+problems. Also there is a study on the most common syntax errors
+\cite{denny2012all}, where results are showing that many of these errors are
+consuming large amount of student time, and even students with higher abilities
+are not solving them more quickly. There are also studies that investigate
+the dynamics and process of solving programming problems in novice programmers.
+An analysis of patterns of debugging is done in \cite{ahmadzadeh2005analysis},
+and in \cite{helminen2012students} they try to reveal the process of solving
+programming problems which is mostly invisible to the teachers. Using analysis
+of interaction traces they investigate how students solve Parson's
+\cite{parsons2006parson} programming problems.
+
+\section{Methodology}
+
+In this paper we analyze and study the data generated from students using the
+web-based system for automatic assessment of programming problems Code at the
+Faculty of computer science and engineering in Skopje.
+This system is in use from September 2012 and it is integral part in eight courses
+that involve some kind of programming assignments in programming languages such
+as C, C++ and Java. More than 2000 students are working on total 1296 problems,
+organized in 367 problem sets, from which 165 (45\%) are exams. Students can
+work on the system directly using the web-based code editor or they can use any
+IDE, and then paste the code to run and test. By observing students in lab
+and examp sessions, they mostly use the web-based editor in
+introductionary programming courses or when making small changes in code, while
+in more advanced courses they usually use IDEs such as Eclipse, NetBeans or
+Code::Blocks.
+
+\subsection{Data recorded}
+
+When students are using the Code system for solving the programming problems,
+the system is storing most of the data generated in the process. Among the
+data collected by the system are the time when problem is
+opened, and records for each student submission (attempt to solve the problem).
+In order to test the correctness of their solution, students have two
+options, to \emph{Run} or to \emph{Submit} the solution. When \emph{Run} is
+executed the student code is saved, compiled, executed and if no syntax
+errors are present, tested using dynamic analysis on a sample test case. If
+there errors are present in the compilation, the messages from the
+compiler are returned as an output of the execution, and if not, the result
+is shown next to the expected sample output, so easy comparisson on the outputs can be performed.
+When saving the solution, if the content of the code is different from the
+previous solution, it is stored as a new version of the solution, keeping the
+old one. The system have implemented version history of the solutions, so
+students can revert back to any previous version of their solution. This can be
+very usefull specially to begginers who have not heard or tryied any version control system.
+When users \emph{Submit} their solution, additionally to the steps performed
+when running, the system saves a problem attempt record with time of the attempt
+and result from testing the result on all the test cases of the given problem. The
+result of the testing is the number of test cases passed, and if all test cases
+passed, the attempt is marked as correct. Students can do unlimited
+submissions and create as many problem attempts records. Even when the result from
+submission is success, they still have the option to resubmit their solutions,
+so as a result we can have multiple correct problem attempts by problem. In more
+than two years of active usage of the system it has recorded more than 750,000
+problem attempts and more than 1,000,000 versions of solutions.
+An initial step in studying and analysing this part of data is presented in this
+paper.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.99\textwidth]{code_usage/editor}
+\caption{The web-based code editor in Code.}
+\label{fig:code_editor}
+\end{figure}
+
+\subsection{The context}
+
+From all the courses that are using Code, in this paper we report here on data
+collected from the winter semester (September - December) 2012 of the following
+two: Structed Programming (SP) and Advanced Programming (AP). Structured
+Programming is a first year introductionary course thought in C, and Advanced
+Programming is a seccond year more advanced elective course thought in Java.
+1029 enrolled the course Structred Programming and each student had to attend at
+least 80\% of 9 lab sessions, and had oportunity to take two midterm exams and
+one final exam. Completing the lab sessions they could earn a total of 10\%
+credit, and from solving the problems on the midterms or exam session thay could
+earn a total of 70\% credit towards their final grade in the course. The
+students in this introductionary course are with different level of motivation
+and there are significant number of students that are enrolling the courses
+seccond time or third time. Advanced Programming was enrolled by 149 students,
+and the settings of the course are simillar to those in Structured Programming.
+It should be noted that students in Advanced Programming were already familiar
+with the system, by working on it in two previous courses from first year, and
+they are more motivated because they chose the course by their own will.
+
+We chose this courses because the system is in use second year, in both lab
+programming assignments and exam programming assignments.
+
+\begin{figure}
+\centering
+\includegraphics[width=.99\textwidth]{code_usage/problems_success}
+\caption{Problems success rate}
+\label{fig:problems_success}
+\end{figure}
+
+\subsection{General problems success rate}
+
+todo\ldots
+
+\subsection{Compilation data}
+
+todo\ldots
+
+\subsection{Evolution of correct solutions}
+
+todo\ldots
+
+\section{Reports on plagiarism}
+
+Plagiarism in source code in programming assignments is a serious issue in most
+undergraduate courses that involve programming. In a study in 2004 at School of
+Computing at the National University of Singapore, 181 students admitted
+plagiarism \cite{tsang2005survey}, and the Centre for Academic Integrity (CAI)
+reported that 40\% of 50,000 students at more than 60 universities admitted
+plagiarism \cite{jocoy2006plagiarism}. Students involved in plagiarism learn a
+lot less than their honest coleagues, they harm the reputation of their own
+institutions, and reduce value of their own degrees.
+
+\begin{table}
+\caption{Results on plagiarism detection using MOSS}
+\begin{center}
+\begin{tabular}{ |l|l|l|l|l| }
+\hline
+Course & Settings & Average percentage match & Average lines matched & Potential
+plagiats*
+\\
+\hline 
+\multirow{2}{*}{SP} & Lab & 52.04\% & 16.37 & 3869 \\
+ & Exam & 22.74\% & 8.06 & 20 \\
+\hline
+\multirow{2}{*}{AP} & Lab & 10.08\% & 28.22 & 1 \\
+ & Exam  & 10.26\% & 20.12 & 2 \\
+\hline
+\end{tabular}
+\label{table:plagiarism_results}
+\end{center}
+\end{table}
+
+Having in mind the importance of plagiarism detection, in our system we have
+integrated one of the most efficient systems for that purpose, MOSS (Measure of
+software similarity) \cite{aiken1994measure}. Before starting the winter semester the
+students were clearly informed that their solutions in the system will be
+checked for plagiarism, and subsequently the involved parties will be
+sanctioned. The results presented on table \ref{table:plagiarism_results} are
+showing evidence of plagiarism mostly in laboratory settings in SP course, where
+students have the freedom to share or use copied solutions. In plagiarism
+were involved the high achievers and low achievers, since latter mostly copied
+solutions from the former. When directly presented the evidence most of these
+students admitted the plagiarism and regreted the action.
+
+\begin{figure}
+\centering
+\includegraphics[width=.99\textwidth]{code_usage/plagiat_example}
+\caption{Plagiats example}
+\label{fig:plagiats_example}
+\end{figure}
+
+On figure \ref{fig:plagiats_example} we show example of the results from MOSS
+system, where plagiarism is detected. Lines collored green and red are matched
+and this clearly shows that these two solutions are plagiats.
+
+While in all academic settings it is still very import to address plagiarism in
+every form, in a new learning model offered by MOOCs, where learning is no
+longer for credits and grades, most of the factors contributing to plagiarism
+may be eliminated. This is an important difference between MOOCs and traditional
+courses. In the latter, the need for plagiarism detection and action against
+plagiarism is paramount while in MOOCs it may serve no purpose.
+
+\section{Evaluation}
+
+Results from qualitative evaluation survey
+
+\begin{table}
+\caption{General usage questions}
+\begin{center}
+\begin{tabular}{ |p{5cm}|p{5cm}|l| }
+\hline
+\multirow{5}{*}{I used Code in?} & 1. Structured Programming (C) & 40\% \\
+\cline{2-3}
+ & 2. Object Oriented Programming (C++/Java) & 49\% \\
+ \cline{2-3}
+ & 3. Algorithms and Data Structures (C/Java) & 5\% \\
+ \cline{2-3}
+ & 4. Advanced Programming (Java) & 3\% \\
+ \cline{2-3}
+ & 5. Advanced Algorithms (Java) & 3\% \\
+ \cline{2-3}
+\hline
+\multirow{2}{*}{Accessing Code from?} & 1. Faculty labs & 38\% \\
+ & 2. From everywhere & 62\% \\
+ \hline
+\multirow{2}{5cm}{Do you want access from everywhere?} & Yes & 98\% \\
+\cline{2-3}
+ & No & 2\% \\
+\hline
+\multirow{4}{*}{How often you use Code?} & 1. I'm not using it & 1\% \\
+\cline{2-3}
+ & 2. Once a week & 42\% \\
+ \cline{2-3}
+ & 3. 2-3 times a week & 42\% \\
+ \cline{2-3}
+ & 4. More than 3 times a week & 15\% \\
+ \cline{2-3}
+\hline
+\end{tabular}
+\label{table:plagiarism_results}
+\end{center}
+\end{table}
+
+\begin{table}
+\caption{System evaluation questions (1-5 grades)}
+\begin{center}
+\begin{tabular}{ |p{5cm}|l|l|l|l|l| }
+\hline
+ Simple to use? & 1 (0\%) & 2 (2\%) & 3 (10\%) & 4 (21\%) & 5 (67\%) \\
+\hline
+Quality of problem view? & 1 (0\%) & 2 (13\%) & 3 (6\%) & 4 (21\%) & 5 (60\%) \\
+\hline
+Code editor functionality? & 1 (4\%) & 2 (13\%) & 3 (13\%) & 4 (40\%) & 5 (31\%)
+\\
+\hline
+Performance and speed? & 1 (0\%) & 2 (6\%) & 3 (6\%) & 4 (31\%) & 5 (56\%) \\
+\hline
+Do you think Code helps you in correctly solving the problem? &
+\multicolumn{3}{|l|}{Yes (62\%)} & \multicolumn{2}{|l|}{No (38\%)}
+ \\
+\hline
+When using Code? & \multicolumn{2}{|p{2.5cm}|}{First use IDE and then copy the
+solution (83\%)} & \multicolumn{2}{|p{2.5cm}|}{Use the web-based code editor
+(13\%)} & Other (4\%) \\
+\hline
+\end{tabular}
+\label{table:system_evaluation}
+\end{center}
+\end{table}
+
+
+\begin{table}
+\caption{Learning programming}
+\begin{center}
+\begin{tabular}{ |p{4cm}|p{7cm}|l| }
+\hline
+\multirow{3}{4cm}{Where do you feel that you learn most (programming)?} &
+1. Lectures & 4\%\\
+\cline{2-3}
+ & 2. TA Exams lectures & 17\% \\
+ \cline{2-3}
+ & 3. Lab exercises & 31\% \\
+ \cline{2-3}
+ & 4. Individual learning & 31\% \\
+ \cline{2-3}
+ & 5. Solving problems in Code & 5\% \\
+ \cline{2-3}
+ & 6. Other & 6\%\\
+\hline
+\multirow{3}{4cm}{What kind of materials helps you most in learning?} &
+1. Books on subject & 13\%\\
+\cline{2-3}
+ & 2. Lectures slides & 15\% \\
+\cline{2-3}
+ & 3. Exercises questions and answers & 4\% \\
+\cline{2-3} 
+ & 4. Example problems with solutions & 46\% \\
+ \cline{2-3}
+ & 5. Interactive visualization of solutions & 13\% \\
+ \cline{2-3}
+ & 6. Other & 10\%\\
+\hline
+\multirow{3}{4cm}{When solving problem on code I mostly need help in?} &
+1. Understanding the problem and think of algorithm & 21\%\\
+\cline{2-3}
+ & 2. Implementing (coding) my solution & 27\% \\
+ \cline{2-3}
+ & 3. Detecting and fixing errors in my solution & 46\% \\
+ \cline{2-3}
+ & 4. Example problems with solutions & 46\% \\
+ \cline{2-3}
+ & 5. Other & 6\%\\
+\hline
+\multirow{3}{4cm}{What kind of help would be usefull to be implemented?} &
+1. Automatically showing relevant materials with similar problems and solutions
+& 63\%\\
+\cline{2-3}
+ & 2. Direct communication with tutors over chat & 23\% \\
+ \cline{2-3}
+ & 3. Other & 7\%\\
+\hline
+\end{tabular}
+\label{table:learning_programming}
+\end{center}
+\end{table}
+
+
+\section{Conclusion}
+
+TODO\ldots
+
+\bibliographystyle{splncs03}
+
+\bibliography{code_study}
+\end{document}

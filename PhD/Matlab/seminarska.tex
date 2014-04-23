@@ -5,7 +5,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,bulgarian]{babel}
-%\usepackage[margin=1in]{geometry}
+\usepackage[margin=1in]{geometry}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{textcomp}
@@ -36,15 +36,13 @@
 
 \begin{document}
 
-
-\title{Имплементација на алгоритми од машинско учење во Matlab/Octave}
-
-\author{Томче Делев}
-\date{}
-
-\maketitle
+\thispagestyle{empty}
+\input{title_page.tex}
 
 \tableofcontents
+\newpage
+
+\listoffigures
 
 \newpage
 
@@ -77,5 +75,11 @@
 \input{logisticRegression}
 
 \input{neuralNetworks}
+
+\newpage
+
+\nocite{*}
+\bibliographystyle{amsplain}
+\bibliography{ref}
 
 \end{document}

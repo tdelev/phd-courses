@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: e-lab_springer.aux
+The style file: splncs03.bst
+Database file #1: e-lab.bib
+Warning--empty journal in clough2000plagiarism
+Warning--empty year in clough2000plagiarism
+Warning--empty booktitle in jenkins2001teaching
+Warning--can't use both volume and number fields in saikkonen2001fully
+You've used 11 entries,
+            2785 wiz_defined-function locations,
+            645 strings with 6044 characters,
+and the built_in function-call counts, 5634 in all, are:
+= -- 467
+> -- 142
+< -- 14
++ -- 62
+- -- 48
+* -- 344
+:= -- 726
+add.period$ -- 15
+call.type$ -- 11
+change.case$ -- 62
+chr.to.int$ -- 0
+cite$ -- 15
+duplicate$ -- 522
+empty$ -- 515
+format.name$ -- 55
+if$ -- 1229
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 105
+newline$ -- 38
+num.names$ -- 22
+pop$ -- 183
+preamble$ -- 1
+purify$ -- 45
+quote$ -- 0
+skip$ -- 164
+stack$ -- 0
+substring$ -- 308
+swap$ -- 291
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 4
+while$ -- 54
+width$ -- 13
+write$ -- 110
+(There were 4 warnings)

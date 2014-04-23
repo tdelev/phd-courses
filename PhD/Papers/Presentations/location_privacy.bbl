@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+
+\bibitem{sportypal}
+``Sportypal.'' \url{http://www.sportypal.com}.
+
+\bibitem{appleGoogle}
+``Apple, google collect user data.''
+  \url{http://online.wsj.com/article/SB100014240527487039837045762771017234536%
+10.html}.
+
+\bibitem{applePrivacy}
+``Apple privacy policy.'' \url{http://www.apple.com/privacy/}.
+
+\bibitem{googlePrivacy}
+``Google privacy policy.'' \url{http://www.google.com/policies/privacy/}.
+
+\bibitem{latimes}
+``Apple collecting, sharing iphone users' precise locations.''
+  \url{http://latimesblogs.latimes.com/technology/2010/06/apple-location-priva%
+cy-iphone-ipad.html}.
+
+\bibitem{narayanan2008robust}
+A.~Narayanan and V.~Shmatikov, ``Robust de-anonymization of large sparse
+  datasets,'' in {\em Security and Privacy, 2008. SP 2008. IEEE Symposium on},
+  pp.~111--125, Ieee, 2008.
+
+\bibitem{dead}
+``Private lives? not ours!.''
+  \url{http://www.pcworld.com/article/16331/private_lives_not_ours.html}.
+
+\bibitem{locationAppsPopular}
+``Location-based applications popular, despite privacy concerns: Isaca.''
+  \url{http://www.eweek.com/c/a/Mobile-and-Wireless/LocationBased-Applications%
+-Popular-Despite-Privacy-Concerns-ISACA-181357/}.
+
+\bibitem{questionary}
+``Do you think apps should tell you when they collect and send information
+  about the mobile device?.''
+  \url{http://online.wsj.com/community/groups/privacy-law-280/topics/do-you-th%
+ink-apps-should}.
+
+\bibitem{beresford2003location}
+A.~Beresford and F.~Stajano, ``Location privacy in pervasive computing,'' {\em
+  Pervasive Computing, IEEE}, vol.~2, no.~1, pp.~46--55, 2003.
+
+\bibitem{bettini2005protecting}
+C.~Bettini, X.~Wang, and S.~Jajodia, ``Protecting privacy against
+  location-based personal identification,'' {\em Secure Data Management},
+  pp.~185--199, 2005.
+
+\bibitem{gruteser2003anonymous}
+M.~Gruteser and D.~Grunwald, ``Anonymous usage of location-based services
+  through spatial and temporal cloaking,'' in {\em Proceedings of the 1st
+  international conference on Mobile systems, applications and services},
+  pp.~31--42, ACM, 2003.
+
+\bibitem{smailagic2002location}
+A.~Smailagic and D.~Kogan, ``Location sensing and privacy in a context-aware
+  computing environment,'' {\em Wireless Communications, IEEE}, vol.~9, no.~5,
+  pp.~10--17, 2002.
+
+\bibitem{barkhuus2003location}
+L.~Barkhuus and A.~Dey, ``Location-based services for mobile telephony: a study
+  of users’ privacy concerns,'' in {\em Proc. Interact}, vol.~2003,
+  pp.~709--712, Citeseer, 2003.
+
+\bibitem{forbes}
+``Location-based apps aren't evil, they're lazy. here's how to fix mobile
+  privacy.''
+  \url{http://www.forbes.com/sites/anthonykosner/2012/04/08/location-based-app%
+s-arent-evil-theyre-lazy-heres-how-to-fix-mobile-privacy/}.
+
+\end{thebibliography}
