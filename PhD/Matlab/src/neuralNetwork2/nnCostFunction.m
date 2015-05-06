@@ -30,8 +30,11 @@ Theta2_grad = zeros(size(Theta2));
 
 X = [ones(m, 1) X];
 y = eye(num_labels)(y,:);
+<<<<<<< HEAD
 %I = eye(num_labels);
 %y = I(y,:);
+=======
+>>>>>>> a3e3fd7606dd7c9cc57b1f26ac503a6429903fd5
 
 a1 = X;
 z2 = a1 * Theta1';
